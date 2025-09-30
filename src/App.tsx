@@ -35,9 +35,11 @@ const schedule = {
 const App = () => {
   return (
     <div className="text-center">
-      <header className="bg-[#282c34] min-h-screen flex flex-col items-center justify-center text-[calc(10px_+_2vmin)] text-white">
+      <header className="bg-[#282c34] min-h-screen flex flex-col items-center justify-center text-[calc(10px_+_2vmin)] text-[#e0e0e0]">
         <Banner title={schedule.title} />
-        <CourseList courses={schedule.courses}/>
+        <div className="mx-50 mt-10 columns-4 gap-5">
+          <CourseList courses={schedule.courses}/>
+        </div>
       </header>
     </div>
   )
