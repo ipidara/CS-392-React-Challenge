@@ -1,14 +1,14 @@
 interface CourseListProps {
   courses: Record<string, {
-    term: string;
-    number: string;
-    title: string;
+    term: string,
+    number: string,
+    title: string,
     meets: string
   }>
 }
 
 const CourseList = ({ courses }: CourseListProps) => (
-  <ul>
+  <ul className="grid grid-cols-3 gap-5">
     {
         Object.entries(courses).map(([id, course]) => (
       <li key={id}>
