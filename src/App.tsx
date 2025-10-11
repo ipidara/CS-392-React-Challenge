@@ -1,6 +1,7 @@
 // import { useState } from 'react'
 import CourseList from './components/CourseList';
 import Banner from './components/Banner';
+import TermPage from './components/TermPage';
 import { useJsonQuery } from './utilities/fetch';
 
 interface Course {
@@ -29,7 +30,7 @@ const App = () => {
       <header className="bg-[#282c34] min-h-screen flex flex-col items-center justify-center text-[calc(10px_+_2vmin)] text-[#e0e0e0]">
         <Banner title={schedule.title} />
         <div className="mx-50 mt-10 gap-5">
-          <CourseList courses={schedule.courses}/>
+          <TermPage courses={schedule.courses}/>
         </div>
       </header>
     </div>
