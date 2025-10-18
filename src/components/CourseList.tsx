@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 interface CourseListProps {
   courses: Record<string, {
@@ -7,17 +7,22 @@ interface CourseListProps {
     title: string,
     meets: string
   }>
+  onSelectionChange?: (ids: string[]) => void;
 }
 
 const toggleList = <T,>(x: T, lst: T[]): T[] => (
   lst.includes(x) ? lst.filter(y => y !== x) : [...lst, x]
 );
 
-const CourseList = ({ courses }: CourseListProps) => {
+const CourseList = ({ courses, onSelectionChange }: CourseListProps) => {
   const [selected, setSelected] = useState<string[]>([]);
 
+  useEffect(() => {
+    onSelectionChange?.(selected);
+  }, [selected, onSelectionChange]);
+
   const toggleSelected = (id: string) => {
-    setSelected(selected => toggleList(id, selected));
+    setSelected(prev => toggleList(id, prev));
   };
 
   return (
