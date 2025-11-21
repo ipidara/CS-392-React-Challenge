@@ -13,6 +13,7 @@ const TermSelector = ({ selection, setSelection }: TermSelectorProps) => (
         className={`px-4 py-2 rounded-lg border 
           ${term === selection ? 'bg-white text-black' : 'bg-transparent text-white border-[#ffffff]'}
         `}
+        data-cy={term}
         onClick={() => setSelection(term)}
       >
         {term}

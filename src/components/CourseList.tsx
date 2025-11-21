@@ -40,7 +40,7 @@ const CourseList = ({ courses, onSelectionChange }: CourseListProps) => {
   return (
     <div className="container mx-auto px-4 w-svw">
       <h2 className="text-2xl">Selected Courses</h2>
-      <ul className="ml-6 h-75 overflow-auto border border-[#4a505f] p-4 bg-[#e0e0e0] text-black mb-7">
+      <ul className="ml-6 h-75 overflow-auto border border-[#4a505f] p-4 bg-[#e0e0e0] text-black mb-7" >
         {
           selected.map(id => {
             const course = courses[id];
