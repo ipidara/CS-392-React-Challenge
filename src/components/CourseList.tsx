@@ -52,7 +52,7 @@ const CourseList = ({ courses, onSelectionChange }: CourseListProps) => {
           })
         }
       </ul>
-      <ul className="grid grid-cols-3 gap-5">
+      <ul className="grid grid-cols-3 gap-5" data-cy="course">
         {
           Object.entries(courses).map(([id, course]) => {
             const isSelected = selected.includes(id);
